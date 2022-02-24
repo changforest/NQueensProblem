@@ -1,4 +1,15 @@
-﻿int n = 8;
+﻿Console.WriteLine("- N Queens Problem -");
+Console.Write("Please enter N(integer): ");
+string? input;
+int n = default;
+
+while (n <= 0)
+{
+    input = Console.ReadLine();
+    if (!Int32.TryParse(input, out n) || n == 0)
+        Console.Write("Please Enter Number(> 0): ");
+}
+
 int counter = 0;
 
 for (int i = 0; i < n; i++)
@@ -26,7 +37,6 @@ void PutQueen(int x, int y, int[] board)
             if (CheckPlace(board, i, y + 1))
                 PutQueen(i, y + 1, board);
         }
-
         return;
     }
 }
