@@ -23,7 +23,7 @@ int GetNumber()
     while (n <= 0)
     {
         input = Console.ReadLine();
-        if (!Int32.TryParse(input, out n) || n == 0)
+        if (!Int32.TryParse(input, out n) || n <= 0)
             Console.Write("Please Enter Number(> 0): ");
     }
     return n;
