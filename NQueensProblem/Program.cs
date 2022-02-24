@@ -1,20 +1,26 @@
 ﻿Console.WriteLine("- N Queens Problem -");
-Console.Write("Please enter N(integer): ");
-string? input;
-int n = default;
 
-while (n <= 0)
-{
-    input = Console.ReadLine();
-    if (!Int32.TryParse(input, out n) || n == 0)
-        Console.Write("Please Enter Number(> 0): ");
-}
-
+int n = GetNumber();
 int counter = 0;
-
 for (int i = 0; i < n; i++)
 {
     PutQueen(i, 0, new int[n]);
+}
+
+int GetNumber()
+{
+    Console.Write("Please enter N(integer): ");
+    string? input;
+    int n = default;
+
+    //使用者輸入檢測
+    while (n <= 0)
+    {
+        input = Console.ReadLine();
+        if (!Int32.TryParse(input, out n) || n == 0)
+            Console.Write("Please Enter Number(> 0): ");
+    }
+    return n;
 }
 
 void PutQueen(int x, int y, int[] board)
@@ -62,7 +68,6 @@ void Output(int[] board)
         {
             line += board[y] == x ? "Q " : "_ ";
         }
-
         Console.WriteLine($"{line}");
     }
 
