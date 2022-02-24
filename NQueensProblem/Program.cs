@@ -7,6 +7,9 @@ for (int i = 0; i < n; i++)
     PutQueen(i, 0, new int[n]);
 }
 
+if (counter == 0)
+    Console.WriteLine($"Number {n} has no solution!");
+
 /// <summary>
 /// 取得 N (使用者輸入)
 /// </summary>
